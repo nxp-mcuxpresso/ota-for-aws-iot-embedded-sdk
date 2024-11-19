@@ -1,0 +1,17 @@
+#
+# Copyright 2024 NXP
+#
+# SPDX-License-Identifier: MIT
+#
+
+
+menu "ota"
+    config MCUX_COMPONENT_middleware.aws_iot.ota
+        bool "Component middleware.aws_iot.ota"
+        select MCUX_COMPONENT_middleware.freertos.corejson
+        select MCUX_COMPONENT_middleware.tinycbor
+
+    config MCUX_COMPONENT_middleware.aws_iot.ota.freertos
+        bool "Component middleware.aws_iot.ota.freertos"
+        select MCUX_COMPONENT_middleware.freertos-kernel
+endmenu
